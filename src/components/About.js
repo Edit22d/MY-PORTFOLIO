@@ -32,19 +32,17 @@ function About() {
               display: "inline-block"
             }}>
               <Image
-                src="/images/profile.jpg" 
-                alt="Edith - Computer Scientist"
-                roundedCircle
-                fluid
+                src="/about.png" 
+                full
+                
                 style={{
                   width: "320px",
-                  height: "320px",
+                  borderRadius:"50%",
+                  height: "600px",
                   objectFit: "cover",
-                  border: "3px solid #64ffda",
-                  boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
-                  transition: "all 0.4s ease",
                   position: "relative",
-                  zIndex: 2
+                  zIndex: 2,
+                  paddingTop:"1rem"
                 }}
                 onMouseOver={(e) => {
                   e.currentTarget.style.transform = "scale(1.05)";
@@ -63,8 +61,7 @@ function About() {
                 left: "-15px",
                 width: "350px",
                 height: "350px",
-                border: "2px solid rgba(100, 255, 218, 0.3)",
-                borderRadius: "50%",
+                border: "2px solid rgba(100, 255, 218)",
                 zIndex: 1,
                 animation: "rotate 20s linear infinite"
               }}></div>
@@ -173,7 +170,6 @@ function About() {
               My mission is to continuously evolve as a technology innovator, 
               contributing to meaningful projects that push the boundaries of 
               what's possible in the digital landscape.
-
             </p>
           </Col>
         </Row>

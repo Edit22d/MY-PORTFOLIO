@@ -14,25 +14,66 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <Router>
-      {/* Updated Navigation Bar */}
+      
       <nav className="navbar navbar-expand-lg navbar-dark fixed-top shadow" style={{
         backgroundColor: "rgba(10, 25, 47, 0.95)",
         backdropFilter: "blur(10px)",
         borderBottom: "1px solid rgba(100, 255, 218, 0.1)",
-        padding: "1rem 0",
+        padding: "0.5rem 0",
         transition: "all 0.3s ease"
       }}>
         <div className="container">
           <Link 
-            className="navbar-brand fw-bold" 
+            className="navbar-brand" 
             to="/"
             style={{
-              color: "#64ffda",
-              fontSize: "1.5rem",
-              letterSpacing: "0.1em"
+              display: "flex",
+              alignItems: "center",
+              textDecoration: "none"
             }}
           >
-            Edith
+            <div style={{
+              width: "50px",
+              height: "50px",
+              borderRadius: "50%",
+              background: "linear-gradient(45deg, #64ffda 0%, #0a192f 100%)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginRight: "10px",
+              border: "0px solid #64ffda",
+              overflow: "hidden",
+              transition: "all 0.3s ease"
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.1)";
+              e.currentTarget.style.boxShadow = "0 0 20px rgba(100, 255, 218, 0.4)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.boxShadow = "none";
+            }}
+            >
+              <img
+                src="/me.png"
+                alt="Edith Logo"
+                style={{
+                  width: "44px",
+                  height: "44px",
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  border: "2px solid #0a192f"
+                }}
+              />
+            </div>
+            <span style={{
+              color: "#64ffda",
+              fontSize: "1.5rem",
+              fontWeight: "700",
+              letterSpacing: "0.1em"
+            }}>
+              Edith
+            </span>
           </Link>
           
           <button

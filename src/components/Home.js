@@ -178,7 +178,7 @@ function Home() {
                 />
               </div>
               
-              {/* Floating elements */}
+              
               <div style={{
                 position: "absolute",
                 top: "20px",

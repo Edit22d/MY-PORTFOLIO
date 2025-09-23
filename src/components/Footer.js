@@ -118,7 +118,7 @@ function Footer() {
                 onMouseEnter={(e) => e.target.style.color = "#64ffda"}
                 onMouseLeave={(e) => e.target.style.color = "#ccd6f6"}
               >
-                ✉️ your.email@example.com
+                ✉️ nabwireedith18@gmail.com
               </a>
               <a 
                 href="tel:+1234567890" 
@@ -131,7 +131,7 @@ function Footer() {
                 onMouseEnter={(e) => e.target.style.color = "#64ffda"}
                 onMouseLeave={(e) => e.target.style.color = "#ccd6f6"}
               >
-                📞 +123 456 7890
+                📞 +256 789697755 / +256 744692050
               </a>
             </div>
           </Col>
