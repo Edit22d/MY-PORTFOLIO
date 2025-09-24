@@ -338,7 +338,7 @@ function Contact() {
             </Card>
           </Col>
 
-          {/* Contact Information */}
+         
           <Col lg={6}>
             <Card
               style={{
@@ -351,20 +351,18 @@ function Contact() {
                 overflow: "hidden"
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-10px)";
                 e.currentTarget.style.borderColor = "#64ffda";
                 e.currentTarget.style.boxShadow =
                   "0 20px 40px rgba(100, 255, 218, 0.1)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
                 e.currentTarget.style.borderColor =
                   "rgba(100, 255, 218, 0.1)";
                 e.currentTarget.style.boxShadow = "none";
               }}
             >
               <Card.Body style={{ padding: "2rem" }}>
-                {/* Email Section */}
+                
                 <div
                   className="d-flex align-items-center mb-4 p-3"
                   style={{

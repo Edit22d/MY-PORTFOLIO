@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
-
+import AboutPic from '../Images/about.png'
 function About() {
   return (
     <section
@@ -32,7 +32,7 @@ function About() {
               display: "inline-block"
             }}>
               <Image
-                src="/about.png" 
+                src={AboutPic}
                 full
                 
                 style={{
@@ -94,6 +94,7 @@ function About() {
 
             <p style={{
               fontSize: "1.2rem",
+              
               lineHeight: "1.8",
               color: "#ccd6f6",
               marginBottom: "2rem",

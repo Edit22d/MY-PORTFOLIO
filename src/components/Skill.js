@@ -126,15 +126,13 @@ function Skill() {
               backdropFilter: "blur(10px)",
               padding: "2.5rem",
               height: "100%",
-              transition: "all 0.3s ease"
             }}
             onMouseOver={(e) => {
               e.currentTarget.style.borderColor = "#64ffda";
-              e.currentTarget.style.transform = "translateY(-5px)";
+            
             }}
             onMouseOut={(e) => {
               e.currentTarget.style.borderColor = "rgba(100, 255, 218, 0.1)";
-              e.currentTarget.style.transform = "translateY(0)";
             }}>
               <h3 style={{
                 color: "#64ffda",
@@ -178,15 +176,12 @@ function Skill() {
               backdropFilter: "blur(10px)",
               padding: "2.5rem",
               height: "100%",
-              transition: "all 0.3s ease"
             }}
             onMouseOver={(e) => {
               e.currentTarget.style.borderColor = "#64ffda";
-              e.currentTarget.style.transform = "translateY(-5px)";
             }}
             onMouseOut={(e) => {
               e.currentTarget.style.borderColor = "rgba(100, 255, 218, 0.1)";
-              e.currentTarget.style.transform = "translateY(0)";
             }}>
               <h3 style={{
                 color: "#64ffda",
@@ -207,7 +202,7 @@ function Skill() {
                   }}>
                     <div style={{
                       width: "12px",
-                      height: "12px",
+                      height: "10px",
                       backgroundColor: "#64ffda",
                       borderRadius: "50%",
                       marginRight: "1rem"
@@ -244,7 +239,7 @@ function Skill() {
           </Col>
         </Row>
 
-        {/* Skills Summary */}
+    
         <Row className="mt-5">
           <Col lg={12}>
             <Card style={{

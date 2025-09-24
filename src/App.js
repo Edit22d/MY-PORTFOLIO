@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import logo from "./Images/logo.png"
 
 import Home from "./components/Home";
 import About from "./components/About";   
@@ -55,7 +56,7 @@ function App() {
             }}
             >
               <img
-                src="/me.png"
+                src={logo}
                 alt="Edith Logo"
                 style={{
                   width: "44px",
@@ -258,12 +259,13 @@ function App() {
         </div>
       </nav>
 
-      {/* Main Content */}
+     
       <div style={{ marginTop: "80px" }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/Skill" element={<Skill />} />
+          <Route path="/Footer" element={<Footer />} />
           <Route path="/Project" element={<Project />} />
           <Route path="/Blog" element={<Blog />} />
           <Route path="/Resume" element={<Resume />} />
@@ -271,7 +273,7 @@ function App() {
         </Routes>
       </div>
 
-      {/* Footer */}
+     
       <Footer />
     </Router>
   );

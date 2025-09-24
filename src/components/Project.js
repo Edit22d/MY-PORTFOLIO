@@ -1,12 +1,17 @@
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom"; // ✅ import Link
+import Projectpic from "../Images/project.png";
+import Projectpic1 from "../Images/project1.png";
+import Projectpic3 from "../Images/project3.png";
+import Projectpic2 from "../Images/project2.png";
 
 function Project() {
   const projects = [
     {
       title: "Hackathon Innovation Challenge",
       description: "Led team to develop award-winning solution under pressure, securing $100 prize in competitive tech competition.",
-      image: "/images/hackathon.jpg",
+      image: Projectpic1,
       link: "#",
       category: "Achievement",
       technologies: ["Team Collaboration", "Problem Solving", "Innovation"]
@@ -14,7 +19,7 @@ function Project() {
     {
       title: "Hi-Innovator Career Development",
       description: "Completed intensive career course focused on professional growth and technical skill enhancement.",
-      image: "/images/hi-innovator.jpg",
+      image: Projectpic,
       link: "#",
       category: "Certification",
       technologies: ["Career Development", "Professional Growth", "Training"]
@@ -22,7 +27,7 @@ function Project() {
     {
       title: "Urban-Tech Engineering Website",
       description: "Designed and deployed fully responsive professional website for engineering consultancy firm.",
-      image: "/images/urban-tech-demo.png",
+      image: Projectpic2,
       link: "https://your-demo-link.com",
       category: "Web Development",
       technologies: ["React", "Bootstrap", "Responsive Design"]
@@ -30,7 +35,7 @@ function Project() {
     {
       title: "Wezesha Up-Shift Competition",
       description: "Achieved Level One victory among 89 competing teams, demonstrating exceptional teamwork and strategy.",
-      image: "/images/wezesha.jpg",
+      image: Projectpic3,
       link: "#",
       category: "Achievement",
       technologies: ["Team Leadership", "Strategic Planning", "Competition"]
@@ -47,7 +52,6 @@ function Project() {
         position: "relative"
       }}
     >
-      {/* Background Pattern */}
       <div style={{
         position: "absolute",
         top: 0,
@@ -216,7 +220,6 @@ function Project() {
           ))}
         </Row>
 
-        {/* Call to Action */}
         <Row className="mt-5">
           <Col lg={12} className="text-center">
             <div style={{
@@ -239,30 +242,34 @@ function Project() {
               }}>
                 I'm always open to discussing new opportunities and innovative projects.
               </p>
-              <Button
-                href="#contact"
-                style={{
-                  backgroundColor: "#64ffda",
-                  border: "1px solid #64ffda",
-                  color: "#0a192f",
-                  fontWeight: "600",
-                  padding: "1rem 2rem",
-                  borderRadius: "4px",
-                  transition: "all 0.3s ease",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.05em"
-                }}
-                onMouseOver={(e) => {
-                  e.target.style.backgroundColor = "transparent";
-                  e.target.style.color = "#64ffda";
-                }}
-                onMouseOut={(e) => {
-                  e.target.style.backgroundColor = "#64ffda";
-                  e.target.style.color = "#0a192f";
-                }}
-              >
-                Get In Touch
-              </Button>
+              
+              {/* ✅ Link to Contact Page */}
+              <Link to="/contact">
+                <Button
+                  style={{
+                    backgroundColor: "#64ffda",
+                    border: "1px solid #64ffda",
+                    color: "#0a192f",
+                    fontWeight: "600",
+                    padding: "1rem 2rem",
+                    borderRadius: "4px",
+                    transition: "all 0.3s ease",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.05em"
+                  }}
+                  onMouseOver={(e) => {
+                    e.target.style.backgroundColor = "transparent";
+                    e.target.style.color = "#64ffda";
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.backgroundColor = "#64ffda";
+                    e.target.style.color = "#0a192f";
+                  }}
+                >
+                  Get In Touch
+                </Button>
+              </Link>
+              
             </div>
           </Col>
         </Row>
