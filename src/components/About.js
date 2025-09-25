@@ -100,7 +100,7 @@ function About() {
               marginBottom: "2rem",
               fontWeight: "300"
             }}>
-              I'm <strong style={{ color: "#64ffda" }}>Edith</strong>, a Computer Science student 
+              I'm <strong style={{ color: "#64ffda" }}> Nabwire Edith </strong>, a Computer Science student 
               passionate about full-stack development and innovative problem-solving. 
               I transform ideas into impactful digital solutions.
             </p>

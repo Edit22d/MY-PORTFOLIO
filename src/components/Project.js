@@ -243,7 +243,7 @@ function Project() {
                 I'm always open to discussing new opportunities and innovative projects.
               </p>
               
-              {/* ✅ Link to Contact Page */}
+           
               <Link to="/contact">
                 <Button
                   style={{

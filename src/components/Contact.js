@@ -21,7 +21,7 @@ function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
+  
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     setShowAlert(true);
@@ -32,8 +32,9 @@ function Contact() {
   };
 
   const contactInfo = {
-    email: "patrickowino002@gmail.com",
-    whatsapp: "+256 759 899 496",
+    email: "nabwireedith18@gmail.com",
+    whatsapp: "+256 744692050 ",
+    Call: "+256 789697755 ",
     linkedin: "https://linkedin.com/in/patrick-owino-9a5b5a2b4/",
     twitter: "https://twitter.com/PatrickOwino01",
     instagram: "https://instagram.com/_.patrickowino"
@@ -50,7 +51,7 @@ function Contact() {
         position: "relative"
       }}
     >
-      {/* Background Pattern */}
+      
       <div
         style={{
           position: "absolute",
@@ -64,7 +65,7 @@ function Contact() {
       ></div>
 
       <Container>
-        {/* Header Section */}
+        
         <Row className="mb-5">
           <Col lg={12}>
             <div style={{ textAlign: "center", marginBottom: "4rem" }}>
@@ -110,7 +111,7 @@ function Contact() {
         </Row>
 
         <Row className="g-4">
-          {/* Contact Form */}
+          
           <Col lg={6}>
             <Card
               style={{
@@ -205,7 +206,7 @@ function Contact() {
                         border: "1px solid rgba(100, 255, 218, 0.2)",
                         background: "rgba(10, 25, 47, 0.3)",
                         color: "#e6f1ff",
-                        transition: "all 0.3s ease"
+                        
                       }}
                       onFocus={(e) => {
                         e.target.style.borderColor = "#64ffda";
@@ -243,7 +244,7 @@ function Contact() {
                         border: "1px solid rgba(100, 255, 218, 0.2)",
                         background: "rgba(10, 25, 47, 0.3)",
                         color: "#e6f1ff",
-                        transition: "all 0.3s ease"
+                        
                       }}
                       onFocus={(e) => {
                         e.target.style.borderColor = "#64ffda";
@@ -310,17 +311,16 @@ function Contact() {
                         padding: "15px",
                         borderRadius: "10px",
                         fontSize: "1.1rem",
-                        transition: "all 0.3s ease"
+                       
                       }}
                       onMouseEnter={(e) => {
                         e.target.style.backgroundColor = "#64ffda";
                         e.target.style.color = "#0a192f";
-                        e.target.style.transform = "translateY(-2px)";
                       }}
                       onMouseLeave={(e) => {
                         e.target.style.backgroundColor = "transparent";
                         e.target.style.color = "#64ffda";
-                        e.target.style.transform = "translateY(0)";
+                       
                       }}
                     >
                       {isSubmitting ? (
@@ -409,14 +409,13 @@ function Contact() {
                   </div>
                 </div>
 
-                {/* WhatsApp Section (FIXED) */}
+                
                 <div
                   className="d-flex align-items-center mb-4 p-3"
                   style={{
                     background: "rgba(100, 255, 218, 0.05)",
                     borderRadius: "10px",
-                    border: "1px solid rgba(100, 255, 218, 0.1)",
-                    transition: "all 0.3s ease"
+                  
                   }}
                 >
                   <div

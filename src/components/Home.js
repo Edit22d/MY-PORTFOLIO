@@ -56,7 +56,7 @@ function Home() {
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                Edith.
+                Nabwire Edith.
               </h1>
 
               <h2
