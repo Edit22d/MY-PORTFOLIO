@@ -1,9 +1,10 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
 
 function Read() {
-  const { id } = useParams();
+  const { id } = useParams(); 
+  const index = parseInt(id, 10);
 
   const blogs = [
     {
@@ -17,7 +18,8 @@ function Read() {
         
         The highlight was pitching to judges – and surprisingly, 
         our project won $100. This was not just about money, 
-        but about believing in myself as a developer.`
+        but about believing in myself as a developer.`,
+      link: "https://www.linkedin.com/posts/nabwire-edith-699b72335_africastalking-foodsecurity-activity-7313495777819934720-PoTe?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFRbHFUBeWVgMlHe_YnFmdrfeHduwqSslro" 
     },
     {
       title: "Lessons from Hi-Innovator Academic",
@@ -29,7 +31,8 @@ function Read() {
 
         One of the key lessons was the importance of teamwork 
         and communication in making projects successful. 
-        I walked away with more confidence as both a developer and innovator.`
+        I walked away with more confidence as both a developer and innovator.`,
+      link: "https://www.linkedin.com/posts/nabwire-edith-699b72335_hi-activity-7348366272499179520-4HwE?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFRbHFUBeWVgMlHe_YnFmdrfeHduwqSslro" 
     },
     {
       title: "Building the Urban-Tech Website",
@@ -41,21 +44,24 @@ function Read() {
 
         I also implemented smooth animations, a dynamic project section, 
         and an engaging homepage. The feedback was positive, 
-        and it inspired me to keep improving my frontend skills.`
+        and it inspired me to keep improving my frontend skills.`,
+      link: "https://urbantechconsults.com" 
     }
   ];
 
-  const blog = blogs[id];
+  const blog = blogs[index];
 
   if (!blog) {
     return (
       <Container style={{ padding: "100px 0", textAlign: "center", color: "#e6f1ff" }}>
         <h2>Blog Not Found</h2>
-        <Link to="/blogs">
-          <Button variant="outline-info" style={{ marginTop: "20px" }}>
-            Back to Blogs
-          </Button>
-        </Link>
+        <Button 
+          variant="outline-info" 
+          style={{ marginTop: "20px" }}
+          onClick={() => window.open("https://www.linkedin.com/in/nabwire-edith-", "_blank")}
+        >
+          Back
+        </Button>
       </Container>
     );
   }
@@ -77,26 +83,25 @@ function Read() {
             <p style={{ whiteSpace: "pre-line", lineHeight: "1.8", color: "#ccd6f6" }}>
               {blog.content}
             </p>
-            <Link to="/blogs">
-              <Button
-                style={{
-                  backgroundColor: "transparent",
-                  border: "1px solid #64ffda",
-                  color: "#64ffda",
-                  marginTop: "2rem"
-                }}
-                onMouseOver={(e) => {
-                  e.target.style.backgroundColor = "#64ffda";
-                  e.target.style.color = "#0a192f";
-                }}
-                onMouseOut={(e) => {
-                  e.target.style.backgroundColor = "transparent";
-                  e.target.style.color = "#64ffda";
-                }}
-              >
-                ← Back to Blogs
-              </Button>
-            </Link>
+            <Button
+              style={{
+                backgroundColor: "transparent",
+                border: "1px solid #64ffda",
+                color: "#64ffda",
+                marginTop: "2rem"
+              }}
+              onMouseOver={(e) => {
+                e.target.style.backgroundColor = "#64ffda";
+                e.target.style.color = "#0a192f";
+              }}
+              onMouseOut={(e) => {
+                e.target.style.backgroundColor = "transparent";
+                e.target.style.color = "#64ffda";
+              }}
+              onClick={() => window.open(blog.link, "_blank")} 
+            >
+              Visit Related Link
+            </Button>
           </Col>
         </Row>
       </Container>

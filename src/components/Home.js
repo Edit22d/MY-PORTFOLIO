@@ -95,7 +95,9 @@ function Home() {
                 }}
               >
                 <Button
-                  href="#projects"
+                  href="http://urbantechconsults.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     backgroundColor: "transparent",
                     border: "1px solid #64ffda",
@@ -121,9 +123,8 @@ function Home() {
                 </Button>
 
                 <Button
-                  href="/cv.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/MYCV.docx"
+                  download="MYCV.docx"
                   style={{
                     backgroundColor: "#64ffda",
                     border: "1px solid #64ffda",

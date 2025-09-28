@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Projectpic1 from "../Images/project1.png";
 import Projectpic from "../Images/project.png";
 import Projectpic2 from "../Images/project2.png";
@@ -11,24 +12,21 @@ function Blogs() {
       date: "July 2025",
       description:
         "I participated in my very first hackathon and it was an exciting journey! Our team built a solution under pressure and ended up winning $100.",
-      image: Projectpic1, // corrected
-      link: "#",
+      image: Projectpic1,
     },
     {
       title: "Lessons from Hi-Innovator Academic",
       date: "June 2025",
       description:
         "I completed a career development course with Hi-Innovator Academic. Here are my key takeaways that shaped my growth as a computer scientist.",
-      image: Projectpic, // corrected
-      link: "#",
+      image: Projectpic,
     },
     {
       title: "Building the Urban-Tech Website",
       date: "May 2025",
       description:
         "I designed and developed a fully responsive website for Urban-Tech Engineering Consults. This blog shares the tools and approach I used.",
-      image: Projectpic2, // corrected
-      link: "#",
+      image: Projectpic2,
     },
   ];
 
@@ -62,7 +60,7 @@ function Blogs() {
       ></div>
 
       <Container>
-        {/* Achievements Section */}
+        
         <Row className="mb-5">
           <Col lg={12}>
             <div style={{ textAlign: "center", marginBottom: "4rem" }}>
@@ -131,7 +129,7 @@ function Blogs() {
           </Col>
         </Row>
 
-        {/* Blogs / Projects */}
+      
         <Row>
           <Col lg={12}>
             <div style={{ textAlign: "center", marginBottom: "4rem" }}>
@@ -218,33 +216,33 @@ function Blogs() {
                   <Card.Text style={{ color: "#8892b0", lineHeight: "1.6", marginBottom: "1.5rem" }}>
                     {blog.description}
                   </Card.Text>
-                  <Button
-                    style={{
-                      backgroundColor: "transparent",
-                      border: "1px solid #64ffda",
-                      color: "#64ffda",
-                      fontWeight: "500",
-                      padding: "0.75rem 1.5rem",
-                      borderRadius: "4px",
-                      transition: "all 0.3s ease",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.05em",
-                      fontSize: "0.9rem",
-                    }}
-                    onMouseOver={(e) => {
-                      e.target.style.backgroundColor = "#64ffda";
-                      e.target.style.color = "#0a192f";
-                    }}
-                    onMouseOut={(e) => {
-                      e.target.style.backgroundColor = "transparent";
-                      e.target.style.color = "#64ffda";
-                    }}
-                    href={blog.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Read More
-                  </Button>
+                 
+                  <Link to={`/read/${index}`}>
+                    <Button
+                      style={{
+                        backgroundColor: "transparent",
+                        border: "1px solid #64ffda",
+                        color: "#64ffda",
+                        fontWeight: "500",
+                        padding: "0.75rem 1.5rem",
+                        borderRadius: "4px",
+                        transition: "all 0.3s ease",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.05em",
+                        fontSize: "0.9rem",
+                      }}
+                      onMouseOver={(e) => {
+                        e.target.style.backgroundColor = "#64ffda";
+                        e.target.style.color = "#0a192f";
+                      }}
+                      onMouseOut={(e) => {
+                        e.target.style.backgroundColor = "transparent";
+                        e.target.style.color = "#64ffda";
+                      }}
+                    >
+                      Read More
+                    </Button>
+                  </Link>
                 </Card.Body>
               </Card>
             </Col>

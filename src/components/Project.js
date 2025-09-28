@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { Link } from "react-router-dom"; // ✅ import Link
+import { Link } from "react-router-dom"; 
 import Projectpic from "../Images/project.png";
 import Projectpic1 from "../Images/project1.png";
 import Projectpic3 from "../Images/project3.png";
@@ -12,7 +12,7 @@ function Project() {
       title: "Hackathon Innovation Challenge",
       description: "Led team to develop award-winning solution under pressure, securing $100 prize in competitive tech competition.",
       image: Projectpic1,
-      link: "#",
+      link: "https://www.linkedin.com/posts/nabwire-edith-699b72335_africastalking-foodsecurity-activity-7313495777819934720-PoTe?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFRbHFUBeWVgMlHe_YnFmdrfeHduwqSslro", 
       category: "Achievement",
       technologies: ["Team Collaboration", "Problem Solving", "Innovation"]
     },
@@ -20,7 +20,7 @@ function Project() {
       title: "Hi-Innovator Career Development",
       description: "Completed intensive career course focused on professional growth and technical skill enhancement.",
       image: Projectpic,
-      link: "#",
+      link: "https://www.linkedin.com/posts/nabwire-edith-699b72335_hi-activity-7348366272499179520-4HwE?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFRbHFUBeWVgMlHe_YnFmdrfeHduwqSslro", 
       category: "Certification",
       technologies: ["Career Development", "Professional Growth", "Training"]
     },
@@ -28,7 +28,7 @@ function Project() {
       title: "Urban-Tech Engineering Website",
       description: "Designed and deployed fully responsive professional website for engineering consultancy firm.",
       image: Projectpic2,
-      link: "https://your-demo-link.com",
+      link: "https://urbantechconsults.com", 
       category: "Web Development",
       technologies: ["React", "Bootstrap", "Responsive Design"]
     },
@@ -36,7 +36,7 @@ function Project() {
       title: "Wezesha Up-Shift Competition",
       description: "Achieved Level One victory among 89 competing teams, demonstrating exceptional teamwork and strategy.",
       image: Projectpic3,
-      link: "#",
+      link: "https://www.linkedin.com/posts/nabwire-edith-699b72335_life-is-a-journey-that-is-never-centered-activity-7369925142287659008-VKzc?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFRbHFUBeWVgMlHe_YnFmdrfeHduwqSslro", 
       category: "Achievement",
       technologies: ["Team Leadership", "Strategic Planning", "Competition"]
     }
@@ -208,9 +208,7 @@ function Project() {
                       e.target.style.backgroundColor = "transparent";
                       e.target.style.color = "#64ffda";
                     }}
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    onClick={() => window.open(project.link, "_blank")} 
                   >
                     View Project Details
                   </Button>
@@ -229,21 +227,13 @@ function Project() {
               padding: "3rem",
               marginTop: "2rem"
             }}>
-              <h4 style={{
-                color: "#64ffda",
-                marginBottom: "1rem"
-              }}>
+              <h4 style={{ color: "#64ffda", marginBottom: "1rem" }}>
                 Interested in Collaborating?
               </h4>
-              <p style={{
-                color: "#8892b0",
-                marginBottom: "2rem",
-                fontSize: "1.1rem"
-              }}>
+              <p style={{ color: "#8892b0", marginBottom: "2rem", fontSize: "1.1rem" }}>
                 I'm always open to discussing new opportunities and innovative projects.
               </p>
               
-           
               <Link to="/contact">
                 <Button
                   style={{

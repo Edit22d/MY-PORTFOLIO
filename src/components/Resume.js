@@ -13,7 +13,7 @@ function Resume() {
         position: "relative"
       }}
     >
-      {/* Background Pattern */}
+     
       <div style={{
         position: "absolute",
         top: 0,
@@ -25,7 +25,7 @@ function Resume() {
       }}></div>
 
       <Container>
-        {/* Header Section */}
+       
         <Row className="mb-5">
           <Col lg={12}>
             <div style={{ textAlign: "center", marginBottom: "4rem" }}>
@@ -63,7 +63,7 @@ function Resume() {
         </Row>
 
         <Row className="g-4">
-          {/* Education */}
+         
           <Col lg={6}>
             <Card 
               style={{ 
@@ -150,7 +150,7 @@ function Resume() {
             </Card>
           </Col>
 
-          {/* Certifications */}
+          
           <Col lg={6}>
             <Card 
               style={{ 
@@ -227,7 +227,7 @@ function Resume() {
         </Row>
 
         <Row className="mt-4">
-          {/* Experience */}
+         
           <Col lg={12}>
             <Card 
               style={{ 
@@ -306,7 +306,6 @@ function Resume() {
           </Col>
         </Row>
 
-        {/* Technical Skills */}
         <Row className="mt-4">
           <Col lg={12}>
             <Card 
@@ -357,249 +356,42 @@ function Resume() {
                     Technical Skills
                   </h4>
                 </div>
-                <Row>
-                  <Col md={6}>
-                    <div style={{ color: "#8892b0", lineHeight: "2.2" }}>
-                      <div>
-                        <strong style={{ color: "#64ffda" }}>Frontend:</strong> 
-                        <span style={{ 
-                          display: "inline-block",
-                          backgroundColor: "rgba(100, 255, 218, 0.1)",
-                          color: "#64ffda",
-                          padding: "0.2rem 0.8rem",
-                          borderRadius: "12px",
-                          fontSize: "0.8rem",
-                          marginLeft: "8px",
-                          border: "1px solid rgba(100, 255, 218, 0.2)"
-                        }}>
-                          HTML
-                        </span>
-                        <span style={{ 
-                          display: "inline-block",
-                          backgroundColor: "rgba(100, 255, 218, 0.1)",
-                          color: "#64ffda",
-                          padding: "0.2rem 0.8rem",
-                          borderRadius: "12px",
-                          fontSize: "0.8rem",
-                          marginLeft: "4px",
-                          border: "1px solid rgba(100, 255, 218, 0.2)"
-                        }}>
-                          CSS
-                        </span>
-                        <span style={{ 
-                          display: "inline-block",
-                          backgroundColor: "rgba(100, 255, 218, 0.1)",
-                          color: "#64ffda",
-                          padding: "0.2rem 0.8rem",
-                          borderRadius: "12px",
-                          fontSize: "0.8rem",
-                          marginLeft: "4px",
-                          border: "1px solid rgba(100, 255, 218, 0.2)"
-                        }}>
-                          JavaScript
-                        </span>
-                        <span style={{ 
-                          display: "inline-block",
-                          backgroundColor: "rgba(100, 255, 218, 0.1)",
-                          color: "#64ffda",
-                          padding: "0.2rem 0.8rem",
-                          borderRadius: "12px",
-                          fontSize: "0.8rem",
-                          marginLeft: "4px",
-                          border: "1px solid rgba(100, 255, 218, 0.2)"
-                        }}>
-                          React
-                        </span>
-                      </div>
-                      <div className="mt-2">
-                        <strong style={{ color: "#64ffda" }}>Backend:</strong> 
-                        <span style={{ 
-                          display: "inline-block",
-                          backgroundColor: "rgba(100, 255, 218, 0.1)",
-                          color: "#64ffda",
-                          padding: "0.2rem 0.8rem",
-                          borderRadius: "12px",
-                          fontSize: "0.8rem",
-                          marginLeft: "8px",
-                          border: "1px solid rgba(100, 255, 218, 0.2)"
-                        }}>
-                          Node.js
-                        </span>
-                        <span style={{ 
-                          display: "inline-block",
-                          backgroundColor: "rgba(100, 255, 218, 0.1)",
-                          color: "#64ffda",
-                          padding: "0.2rem 0.8rem",
-                          borderRadius: "12px",
-                          fontSize: "0.8rem",
-                          marginLeft: "4px",
-                          border: "1px solid rgba(100, 255, 218, 0.2)"
-                        }}>
-                          Express
-                        </span>
-                      </div>
-                      <div className="mt-2">
-                        <strong style={{ color: "#64ffda" }}>Database:</strong> 
-                        <span style={{ 
-                          display: "inline-block",
-                          backgroundColor: "rgba(100, 255, 218, 0.1)",
-                          color: "#64ffda",
-                          padding: "0.2rem 0.8rem",
-                          borderRadius: "12px",
-                          fontSize: "0.8rem",
-                          marginLeft: "8px",
-                          border: "1px solid rgba(100, 255, 218, 0.2)"
-                        }}>
-                          MongoDB
-                        </span>
-                        <span style={{ 
-                          display: "inline-block",
-                          backgroundColor: "rgba(100, 255, 218, 0.1)",
-                          color: "#64ffda",
-                          padding: "0.2rem 0.8rem",
-                          borderRadius: "12px",
-                          fontSize: "0.8rem",
-                          marginLeft: "4px",
-                          border: "1px solid rgba(100, 255, 218, 0.2)"
-                        }}>
-                          MySQL
-                        </span>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col md={6}>
-                    <div style={{ color: "#8892b0", lineHeight: "2.2" }}>
-                      <div>
-                        <strong style={{ color: "#64ffda" }}>Tools:</strong> 
-                        <span style={{ 
-                          display: "inline-block",
-                          backgroundColor: "rgba(100, 255, 218, 0.1)",
-                          color: "#64ffda",
-                          padding: "0.2rem 0.8rem",
-                          borderRadius: "12px",
-                          fontSize: "0.8rem",
-                          marginLeft: "8px",
-                          border: "1px solid rgba(100, 255, 218, 0.2)"
-                        }}>
-                          Git
-                        </span>
-                        <span style={{ 
-                          display: "inline-block",
-                          backgroundColor: "rgba(100, 255, 218, 0.1)",
-                          color: "#64ffda",
-                          padding: "0.2rem 0.8rem",
-                          borderRadius: "12px",
-                          fontSize: "0.8rem",
-                          marginLeft: "4px",
-                          border: "1px solid rgba(100, 255, 218, 0.2)"
-                        }}>
-                          GitHub
-                        </span>
-                        <span style={{ 
-                          display: "inline-block",
-                          backgroundColor: "rgba(100, 255, 218, 0.1)",
-                          color: "#64ffda",
-                          padding: "0.2rem 0.8rem",
-                          borderRadius: "12px",
-                          fontSize: "0.8rem",
-                          marginLeft: "4px",
-                          border: "1px solid rgba(100, 255, 218, 0.2)"
-                        }}>
-                          VS Code
-                        </span>
-                      </div>
-                      <div className="mt-2">
-                        <strong style={{ color: "#64ffda" }}>UI/UX:</strong> 
-                        <span style={{ 
-                          display: "inline-block",
-                          backgroundColor: "rgba(100, 255, 218, 0.1)",
-                          color: "#64ffda",
-                          padding: "0.2rem 0.8rem",
-                          borderRadius: "12px",
-                          fontSize: "0.8rem",
-                          marginLeft: "8px",
-                          border: "1px solid rgba(100, 255, 218, 0.2)"
-                        }}>
-                          Responsive Design
-                        </span>
-                        <span style={{ 
-                          display: "inline-block",
-                          backgroundColor: "rgba(100, 255, 218, 0.1)",
-                          color: "#64ffda",
-                          padding: "0.2rem 0.8rem",
-                          borderRadius: "12px",
-                          fontSize: "0.8rem",
-                          marginLeft: "4px",
-                          border: "1px solid rgba(100, 255, 218, 0.2)"
-                        }}>
-                          Bootstrap
-                        </span>
-                      </div>
-                      <div className="mt-2">
-                        <strong style={{ color: "#64ffda" }}>Other:</strong> 
-                        <span style={{ 
-                          display: "inline-block",
-                          backgroundColor: "rgba(100, 255, 218, 0.1)",
-                          color: "#64ffda",
-                          padding: "0.2rem 0.8rem",
-                          borderRadius: "12px",
-                          fontSize: "0.8rem",
-                          marginLeft: "8px",
-                          border: "1px solid rgba(100, 255, 218, 0.2)"
-                        }}>
-                          REST APIs
-                        </span>
-                        <span style={{ 
-                          display: "inline-block",
-                          backgroundColor: "rgba(100, 255, 218, 0.1)",
-                          color: "#64ffda",
-                          padding: "0.2rem 0.8rem",
-                          borderRadius: "12px",
-                          fontSize: "0.8rem",
-                          marginLeft: "4px",
-                          border: "1px solid rgba(100, 255, 218, 0.2)"
-                        }}>
-                          Agile
-                        </span>
-                      </div>
-                    </div>
-                  </Col>
-                </Row>
+              
               </Card.Body>
             </Card>
           </Col>
         </Row>
 
-        {/* Download Button */}
+        
         <div style={{ textAlign: "center", marginTop: "4rem" }}>
-          <Button
-            href="/resume.pdf"
-            download
-            style={{
-              backgroundColor: "transparent",
-              border: "1px solid #64ffda",
-              color: "#64ffda",
-              fontWeight: "500",
-              padding: "1rem 2.5rem",
-              borderRadius: "4px",
-              transition: "all 0.3s ease",
-              textTransform: "uppercase",
-              letterSpacing: "0.05em",
-              fontSize: "1rem"
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.backgroundColor = "#64ffda";
-              e.target.style.color = "#0a192f";
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.backgroundColor = "transparent";
-              e.target.style.color = "#64ffda";
-            }}
-          >
-            📂 Download Resume
-            
-          </Button>
-        </div>
+  <Button
+    href="/MYCV.docx"  
+    download
+    style={{
+      backgroundColor: "transparent",
+      border: "1px solid #64ffda",
+      color: "#64ffda",
+      fontWeight: "500",
+      padding: "1rem 2.5rem",
+      borderRadius: "4px",
+      transition: "all 0.3s ease",
+      textTransform: "uppercase",
+      letterSpacing: "0.05em",
+      fontSize: "1rem"
+    }}
+    onMouseEnter={(e) => {
+      e.target.style.backgroundColor = "#64ffda";
+      e.target.style.color = "#0a192f";
+    }}
+    onMouseLeave={(e) => {
+      e.target.style.backgroundColor = "transparent";
+      e.target.style.color = "#64ffda";
+    }}
+  >
+    📂 Download Resume
+  </Button>
+</div>
+
       </Container>
     </section>
   );
