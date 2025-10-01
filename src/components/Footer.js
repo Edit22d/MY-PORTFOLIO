@@ -5,11 +5,11 @@ import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaWhatsapp, FaHome, FaUse
 
 function Footer() {
   const socialLinks = {
-    whatsapp: "https://wa.me/yourphonenumber",
-    linkedin: "https://linkedin.com/in/your-username",
-    twitter: "https://twitter.com/your-username",
-    instagram: "https://instagram.com/your-username",
-    github: "https://github.com/your-username"
+    whatsapp: "https://wa.me/256744692050", 
+    linkedin: "https://www.linkedin.com/in/nabwire-edith-",
+    twitter: "https://X.com/nabwire_ed10706",
+    instagram: "https://instagram.com/edi-wire", 
+    github: "https://github.com/Edit22d"
   };
 
   const quickLinksColumn1 = [

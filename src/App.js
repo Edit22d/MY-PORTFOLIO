@@ -1,6 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
-
+import { HashRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "./Images/logo.png";
 
@@ -12,12 +11,11 @@ import Contact from "./components/Contact";
 import Blog from "./components/Blog";
 import Resume from "./components/Resume";
 import Footer from "./components/Footer";
-import Read from "./components/Read"; 
+import Read from "./components/Read";
 
 function App() {
   return (
     <Router>
-      {/* Navbar */}
       <nav
         className="navbar navbar-expand-lg navbar-dark fixed-top shadow"
         style={{
@@ -26,17 +24,15 @@ function App() {
           borderBottom: "1px solid rgba(100, 255, 218, 0.1)",
           padding: "0.5rem 0",
           transition: "all 0.3s ease",
+          zIndex: 1000,
         }}
       >
         <div className="container">
-          <Link
-            className="navbar-brand"
+          
+          <NavLink
+            className="navbar-brand d-flex align-items-center"
             to="/"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              textDecoration: "none",
-            }}
+            style={{ textDecoration: "none" }}
           >
             <div
               style={{
@@ -48,18 +44,8 @@ function App() {
                 alignItems: "center",
                 justifyContent: "center",
                 marginRight: "10px",
-                border: "0px solid #64ffda",
                 overflow: "hidden",
                 transition: "all 0.3s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "scale(1.1)";
-                e.currentTarget.style.boxShadow =
-                  "0 0 20px rgba(100, 255, 218, 0.4)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-                e.currentTarget.style.boxShadow = "none";
               }}
             >
               <img
@@ -84,8 +70,9 @@ function App() {
             >
               Edith
             </span>
-          </Link>
+          </NavLink>
 
+          
           <button
             className="navbar-toggler"
             type="button"
@@ -96,54 +83,48 @@ function App() {
             aria-label="Toggle navigation"
             style={{
               border: "1px solid #64ffda",
+              paddind:"0.5rem 1rem"
+              
             }}
           >
             <span className="navbar-toggler-icon"></span>
           </button>
 
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/About">
-                  About Me
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/Skill">
-                  Skills
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/Project">
-                  Projects
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/Blog">
-                  Blog
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/Resume">
-                  Resume
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/Contact">
-                  Contact
-                </Link>
-              </li>
+            <ul className="navbar-nav ms-auto text-left">
+              {[
+                { path: "/", label: "Home" },
+                { path: "/About", label: "About Me" },
+                { path: "/Skill", label: "Skills" },
+                { path: "/Project", label: "Projects" },
+                { path: "/Blog", label: "Blog" },
+                { path: "/Resume", label: "Resume" },
+                { path: "/Contact", label: "Contact" },
+              ].map((item, idx) => (
+                <li className="nav-item" key={idx}>
+                  <NavLink
+                    to={item.path}
+                    className="nav-link"
+                    style={({ isActive }) => ({
+                      color: isActive ? "#64ffda" : "#ffffff",
+                      fontWeight: isActive ? "700" : "00",
+                      borderBottom: isActive
+                        ? "2px solid #64ffda"
+                        : "2px solid transparent",
+                      transition: "all 0.3s ease",
+                    })}
+                    onClick={() => window.scrollTo(0, 0)}
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
       </nav>
 
-      {/* Page Routes */}
+      
       <div style={{ marginTop: "80px" }}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -154,11 +135,10 @@ function App() {
           <Route path="/Resume" element={<Resume />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Footer" element={<Footer />} />
-          <Route path="/read/:id" element={<Read />} /> {/* ✅ Fixed */}
+          <Route path="/read/:id" element={<Read />} />
         </Routes>
       </div>
 
-      {/* Footer */}
       <Footer />
     </Router>
   );
