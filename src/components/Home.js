@@ -121,7 +121,7 @@ function Home() {
                     e.target.style.transform = "translateY(0)";
                   }}
                 >
-                  GCCI
+                  VIEW MY WORK
                 </Button>
 
                 <Button
