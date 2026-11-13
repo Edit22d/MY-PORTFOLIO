@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Responsive layer — only kicks in below the desktop breakpoint, so the
+   existing desktop design is left exactly as it was.
+   ========================================================================== */
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  background: #0a192f;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ---------- Navigation (tablet & phone) ---------- */
+.site-nav .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(100, 255, 218, 0.25);
+}
+
+@media (max-width: 991.98px) {
+  .site-nav .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .site-nav .navbar-collapse {
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0 0.75rem;
+    border-top: 1px solid rgba(100, 255, 218, 0.12);
+  }
+
+  .site-nav .navbar-nav .nav-link {
+    padding: 0.85rem 0.25rem;
+    font-size: 1.05rem;
+    display: block;
+    width: fit-content;
+  }
+}
+
+/* ---------- Home ---------- */
+@media (max-width: 991.98px) {
+  .home-section {
+    min-height: auto !important;
+    padding: 48px 0 64px !important;
+  }
+
+  .home-row {
+    row-gap: 0;
+  }
+
+  /* photo first, then the introduction */
+  .home-photo-col {
+    order: -1;
+    margin-top: 0 !important;
+    margin-bottom: 2rem;
+  }
+
+  .home-text-col {
+    text-align: center !important;
+  }
+
+  .home-text-col p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-cta {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .home-section .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .home-photo-circle {
+    width: min(260px, 70vw) !important;
+    height: min(260px, 70vw) !important;
+  }
+
+  /* image sits neatly inside the gradient ring instead of spilling out */
+  .home-photo {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none;
+    border-width: 4px !important;
+  }
+
+  .home-orb-1 {
+    top: 6px !important;
+    right: 6px !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .home-orb-2 {
+    bottom: 12px !important;
+    left: 6px !important;
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .home-text-col h6 {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .home-text-col h1 {
+    font-size: clamp(2.1rem, 9.5vw, 2.6rem) !important;
+    line-height: 1.15;
+  }
+
+  .home-text-col h2 {
+    font-size: clamp(1.15rem, 5.4vw, 1.5rem) !important;
+    line-height: 1.35;
+    margin-bottom: 1.1rem !important;
+  }
+
+  .home-text-col p {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+    margin-bottom: 1.75rem !important;
+  }
+
+  /* two equal, full-width buttons stacked neatly */
+  .home-cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem !important;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .home-cta .btn {
+    width: 100%;
+    padding: 14px 20px !important;
+    text-align: center;
+  }
+}
+
+/* ---------- About ---------- */
+@media (max-width: 991.98px) {
+  .about-photo {
+    width: min(260px, 70vw) !important;
+    height: auto !important;
+    aspect-ratio: 320 / 440;
+  }
+
+  .about-frame {
+    width: min(290px, 78vw) !important;
+    height: min(290px, 78vw) !important;
+  }
+}
+
+/* ---------- Generic section spacing / typography on phones ---------- */
+@media (max-width: 767.98px) {
+  section {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+
+  .home-section {
+    padding-top: 40px !important;
+    padding-bottom: 56px !important;
+  }
+
+  section .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  section h2 {
+    word-wrap: break-word;
+  }
+
+  .btn {
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

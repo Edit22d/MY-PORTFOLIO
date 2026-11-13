@@ -32,6 +32,7 @@ function About() {
               display: "inline-block"
             }}>
               <Image
+                className="about-photo"
                 src={AboutPic}
                 full
                 
@@ -55,7 +56,7 @@ function About() {
               />
               
             
-              <div style={{
+              <div className="about-frame" style={{
                 position: "absolute",
                 top: "-15px",
                 left: "-15px",
