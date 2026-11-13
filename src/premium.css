@@ -1,0 +1,365 @@
+/* ==========================================================================
+   Premium polish layer — purely additive. Same palette (navy + mint),
+   with depth, motion and finer detail on top.
+   ========================================================================== */
+
+:root {
+  --mint: #64ffda;
+  --navy: #0a192f;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(100, 255, 218, 0.28);
+  color: #fff;
+}
+
+/* ---------- Scrollbar ---------- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 255, 218, 0.35) #0a192f;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a192f;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(100, 255, 218, 0.5), rgba(100, 255, 218, 0.2));
+  border-radius: 10px;
+  border: 2px solid #0a192f;
+}
+
+/* ---------- Keyboard focus ---------- */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--mint);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* ---------- Ambient light over the whole site ---------- */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(60vw 40vh at 85% -5%, rgba(100, 255, 218, 0.07), transparent 70%),
+    radial-gradient(50vw 40vh at -5% 105%, rgba(90, 130, 255, 0.07), transparent 70%);
+}
+
+/* ---------- Navbar: frosted glass ---------- */
+.site-nav {
+  background: rgba(10, 25, 47, 0.72) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(160%) !important;
+  backdrop-filter: blur(18px) saturate(160%) !important;
+  border-bottom: 1px solid rgba(100, 255, 218, 0.08);
+  box-shadow: none !important;
+  transition: background 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+}
+
+body.is-scrolled .site-nav {
+  background: rgba(8, 20, 38, 0.88) !important;
+  box-shadow: 0 10px 40px -18px rgba(0, 0, 0, 0.7) !important;
+}
+
+.site-nav .nav-link {
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+.site-nav .nav-link:hover {
+  color: var(--mint) !important;
+}
+
+@media (max-width: 991.98px) {
+  .site-nav .navbar-collapse {
+    animation: menuDrop 0.3s var(--ease-out);
+  }
+}
+
+@keyframes menuDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Page enter ---------- */
+section {
+  animation: pageIn 0.7s var(--ease-out) both;
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Headings ---------- */
+section h1,
+section h2 {
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  letter-spacing: 0.06em;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out),
+    background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px -14px rgba(100, 255, 218, 0.55);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* light sweep across buttons on hover */
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s var(--ease-out);
+  pointer-events: none;
+}
+.btn:hover::after {
+  left: 130%;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  position: relative;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out),
+    border-color 0.45s ease, opacity 0.7s var(--ease-out);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(100, 255, 218, 0.7), transparent);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  z-index: 3;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .card:hover {
+    border-color: rgba(100, 255, 218, 0.4) !important;
+    box-shadow: 0 28px 60px -28px rgba(0, 0, 0, 0.75),
+      0 0 0 1px rgba(100, 255, 218, 0.06), 0 0 50px -20px rgba(100, 255, 218, 0.3) !important;
+  }
+  .card:hover::before {
+    opacity: 1;
+  }
+}
+
+/* reveal-on-scroll (added by Enhancements.js to cards below the fold) */
+.card.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.card.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Home hero ---------- */
+.home-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.home-section::before,
+.home-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+.home-section::before {
+  width: 420px;
+  height: 420px;
+  top: -120px;
+  right: -80px;
+  background: rgba(100, 255, 218, 0.14);
+  animation: drift 14s ease-in-out infinite alternate;
+}
+.home-section::after {
+  width: 360px;
+  height: 360px;
+  bottom: -140px;
+  left: -100px;
+  background: rgba(80, 120, 255, 0.14);
+  animation: drift 18s ease-in-out infinite alternate-reverse;
+}
+.home-section > .container {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-40px, 30px, 0) scale(1.15);
+  }
+}
+
+/* staggered entrance for the hero copy */
+.home-text-col > * {
+  animation: riseIn 0.9s var(--ease-out) both;
+}
+.home-text-col > *:nth-child(1) { animation-delay: 0.05s; }
+.home-text-col > *:nth-child(2) { animation-delay: 0.15s; }
+.home-text-col > *:nth-child(3) { animation-delay: 0.25s; }
+.home-text-col > *:nth-child(4) { animation-delay: 0.35s; }
+.home-text-col > *:nth-child(5) { animation-delay: 0.45s; }
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* richer glow on the portrait */
+.home-photo-circle {
+  box-shadow: 0 0 0 1px rgba(100, 255, 218, 0.25), 0 30px 80px -30px rgba(100, 255, 218, 0.45) !important;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  position: relative;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(100, 255, 218, 0.55), transparent);
+}
+
+/* ---------- Reading progress bar ---------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 2000;
+  pointer-events: none;
+}
+.scroll-progress span {
+  display: block;
+  height: 100%;
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, #64ffda, #5a82ff);
+  box-shadow: 0 0 12px rgba(100, 255, 218, 0.7);
+  transition: transform 0.1s linear;
+}
+
+/* ---------- Back to top ---------- */
+.back-to-top {
+  position: fixed;
+  right: 18px;
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  color: var(--mint);
+  font-size: 1rem;
+  background: rgba(10, 25, 47, 0.8);
+  border: 1px solid rgba(100, 255, 218, 0.45);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 30px -12px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  z-index: 1500;
+  opacity: 0;
+  transform: translateY(16px) scale(0.9);
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease-out), transform 0.35s var(--ease-out),
+    background 0.25s ease, color 0.25s ease;
+}
+.back-to-top.visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+.back-to-top:hover {
+  background: var(--mint);
+  color: #0a192f;
+  transform: translateY(-3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  section,
+  .home-text-col > *,
+  .home-section::before,
+  .home-section::after {
+    animation: none !important;
+  }
+  .card.reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

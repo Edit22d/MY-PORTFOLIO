@@ -3,6 +3,7 @@ import { HashRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "./Images/logo.png";
 import "./responsive.css";
+import "./premium.css";
 
 import Home from "./components/Home";
 import About from "./components/About";
@@ -12,6 +13,7 @@ import Contact from "./components/Contact";
 import Blog from "./components/Blog";
 import Resume from "./components/Resume";
 import Footer from "./components/Footer";
+import Enhancements from "./components/Enhancements";
 import Read from "./components/Read";
 
 function App() {
@@ -155,6 +157,7 @@ function App() {
       </div>
 
       <Footer />
+      <Enhancements />
     </Router>
   );
 }

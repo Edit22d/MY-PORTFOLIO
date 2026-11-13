@@ -14,15 +14,15 @@ function Footer() {
 
   const quickLinksColumn1 = [
     { name: "Home", path: "/", icon: <FaHome /> },
-    { name: "About Me", path: "/aboutme", icon: <FaUser /> },
-    { name: "Skill", path: "/skill", icon: <FaBrain /> }
+    { name: "About Me", path: "/About", icon: <FaUser /> },
+    { name: "Skill", path: "/Skill", icon: <FaBrain /> }
   ];
 
   const quickLinksColumn2 = [
-    { name: "Project", path: "/project", icon: <FaProjectDiagram /> },
-    { name: "Blogs", path: "/blogs", icon: <FaFileAlt /> },
-    { name: "Resume", path: "/resume", icon: <FaFileAlt /> },
-    { name: "Contact", path: "/contact", icon: <FaEnvelope /> }
+    { name: "Project", path: "/Project", icon: <FaProjectDiagram /> },
+    { name: "Blogs", path: "/Blog", icon: <FaFileAlt /> },
+    { name: "Resume", path: "/Resume", icon: <FaFileAlt /> },
+    { name: "Contact", path: "/Contact", icon: <FaEnvelope /> }
   ];
 
   const isSocialActive = {
