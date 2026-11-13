@@ -365,8 +365,8 @@ function Resume() {
         
         <div style={{ textAlign: "center", marginTop: "4rem" }}>
   <Button
-    href="/MYCV.docx"  
-    download
+    href={`${process.env.PUBLIC_URL}/MYCV.docx`}
+    download="MYCV.docx"
     style={{
       backgroundColor: "transparent",
       border: "1px solid #64ffda",

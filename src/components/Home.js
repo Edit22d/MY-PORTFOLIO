@@ -6,6 +6,7 @@ function Home() {
   return (
     <section
       id="home"
+      className="home-section"
       style={{
         minHeight: "100vh",
         display: "flex",
@@ -30,8 +31,8 @@ function Home() {
       ></div>
 
       <Container>
-        <Row className="align-items-center">
-          <Col lg={6} className="text-center text-lg-start">
+        <Row className="align-items-center home-row">
+          <Col lg={6} className="text-center text-lg-start home-text-col">
             <div style={{ position: "relative", zIndex: 2 }}>
               <h6
                 style={{
@@ -86,6 +87,7 @@ function Home() {
               </p>
 
               <div
+                className="home-cta"
                 style={{
                   display: "flex",
                   gap: "1rem",
@@ -95,7 +97,7 @@ function Home() {
                 }}
               >
                 <Button
-                  href="http://urbantechconsults.com"
+                  href="https://gcc-inter.org/"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -119,11 +121,11 @@ function Home() {
                     e.target.style.transform = "translateY(0)";
                   }}
                 >
-                  View My Work
+                  VIEW MY WORK
                 </Button>
 
                 <Button
-                  href="/MYCV.docx"
+                  href={`${process.env.PUBLIC_URL}/MYCV.docx`}
                   download="MYCV.docx"
                   style={{
                     backgroundColor: "#64ffda",
@@ -154,9 +156,13 @@ function Home() {
             </div>
           </Col>
 
-          <Col lg={6} className="text-center mt-5 mt-lg-0">
-            <div style={{ position: "relative", display: "inline-block" }}>
+          <Col lg={6} className="text-center mt-5 mt-lg-0 home-photo-col">
+            <div
+              className="home-photo-wrap"
+              style={{ position: "relative", display: "inline-block" }}
+            >
               <div
+                className="home-photo-circle"
                 style={{
                   width: "320px",
                   height: "320px",
@@ -181,6 +187,7 @@ function Home() {
                 }}
               >
                 <img
+                  className="home-photo"
                   src={Homepic}
                   alt="Edith - Computer Scientist"
                   style={{
@@ -194,6 +201,7 @@ function Home() {
               </div>
 
               <div
+                className="home-orb home-orb-1"
                 style={{
                   position: "absolute",
                   top: "20px",
@@ -207,6 +215,7 @@ function Home() {
               ></div>
 
               <div
+                className="home-orb home-orb-2"
                 style={{
                   position: "absolute",
                   bottom: "40px",

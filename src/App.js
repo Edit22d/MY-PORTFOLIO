@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { HashRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "./Images/logo.png";
+import "./responsive.css";
+import "./premium.css";
 
 import Home from "./components/Home";
 import About from "./components/About";
@@ -11,13 +13,23 @@ import Contact from "./components/Contact";
 import Blog from "./components/Blog";
 import Resume from "./components/Resume";
 import Footer from "./components/Footer";
+import Enhancements from "./components/Enhancements";
 import Read from "./components/Read";
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Close the mobile menu with the Escape key.
+  useEffect(() => {
+    const onKey = (e) => e.key === "Escape" && setMenuOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
   return (
     <Router>
       <nav
-        className="navbar navbar-expand-lg navbar-dark fixed-top shadow"
+        className="navbar navbar-expand-lg site-nav navbar-dark fixed-top shadow"
         style={{
           backgroundColor: "rgba(10, 25, 47, 0.95)",
           backdropFilter: "blur(10px)",
@@ -32,6 +44,7 @@ function App() {
           <NavLink
             className="navbar-brand d-flex align-items-center"
             to="/"
+            onClick={() => setMenuOpen(false)}
             style={{ textDecoration: "none" }}
           >
             <div
@@ -76,21 +89,22 @@ function App() {
           <button
             className="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
+            onClick={() => setMenuOpen((open) => !open)}
             aria-controls="navbarNav"
-            aria-expanded="false"
+            aria-expanded={menuOpen}
             aria-label="Toggle navigation"
             style={{
               border: "1px solid #64ffda",
-              paddind:"0.5rem 1rem"
-              
+              padding: "0.5rem 1rem",
             }}
           >
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div
+            className={`collapse navbar-collapse${menuOpen ? " show" : ""}`}
+            id="navbarNav"
+          >
             <ul className="navbar-nav ms-auto text-left">
               {[
                 { path: "/", label: "Home" },
@@ -107,13 +121,16 @@ function App() {
                     className="nav-link"
                     style={({ isActive }) => ({
                       color: isActive ? "#64ffda" : "#ffffff",
-                      fontWeight: isActive ? "700" : "00",
+                      fontWeight: isActive ? "700" : "400",
                       borderBottom: isActive
                         ? "2px solid #64ffda"
                         : "2px solid transparent",
                       transition: "all 0.3s ease",
                     })}
-                    onClick={() => window.scrollTo(0, 0)}
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                      setMenuOpen(false);
+                    }}
                   >
                     {item.label}
                   </NavLink>
@@ -140,6 +157,7 @@ function App() {
       </div>
 
       <Footer />
+      <Enhancements />
     </Router>
   );
 }
